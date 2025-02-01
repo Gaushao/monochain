@@ -1,0 +1,40 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "envMode": "strict",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "breth-net#dev:breth": {
+      "env": ["PUBLIC_RPC_URL"],
+      "cache": false
+    },
+    "dev:breth": {
+      "dependsOn": ["breth-net#dev:breth"],
+      "env": ["NEXT_PUBLIC_RPC_URL"],
+      "cache": false,
+      "persistent": true
+    },
+    "breth-net#dev:docs": {
+      "env": ["PUBLIC_RPC_URL"],
+      "cache": false
+    },
+    "dev:docs": {
+      "dependsOn": ["breth-net#dev:docs"],
+      "env": ["NEXT_PUBLIC_RPC_URL"],
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "try": {}
+  }
+}

@@ -1,0 +1,11 @@
+participants:
+  - el_type: geth
+    cl_type: lighthouse
+    count: 2
+network_params:
+  network_id: "315198"
+snooper_enabled: true
+additional_services:
+  - prometheus_grafana
+  - blockscout
+ethereum_metrics_exporter_enabled: true

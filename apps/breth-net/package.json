@@ -1,0 +1,42 @@
+{
+  "name": "breth-net",
+  "version": "1.0.0",
+  "description": "breth - brazilian ethereum network blockchain",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev:breth": "bash scripts/dev.sh",
+    "clean": "bash scripts/kurtosisclean.sh",
+    "restart": "kurtosis clean -a && kurtosis run --enclave brethnet github.com/ethpandaops/ethereum-package --args-file args.yaml",
+    "docker:clean": "docker system prune -a --volumes",
+    "rpc": "bash scripts/devenv.sh",
+    "deploy": "bash scripts/deploy.sh",
+    "balances": "npx hardhat balances --network localnet",
+    "dev:docs": "npx hardhat docgen --network localnet"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.33.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-ignition": "^0.15.9",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.9",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.12",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "chai": "4",
+    "hardhat": "^2.22.18",
+    "hardhat-gas-reporter": "^2.2.2",
+    "solidity-coverage": "^0.8.14",
+    "solidity-docgen": "^0.6.0-beta.36",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0",
+    "ethers": "^6.13.5",
+    "dotenv": "^16.4.7",
+    "typescript": "5.5.4"
+  }
+}

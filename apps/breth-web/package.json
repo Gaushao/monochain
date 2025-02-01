@@ -1,0 +1,31 @@
+{
+  "name": "breth-web",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:breth": "dotenvx run -f../../.env -- next dev --turbopack",
+    "build:breth": "next build",
+    "start:breth": "next start",
+    "clean": "bash ../../packages/scripts/nextclean.sh",
+    "lint": "next lint --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "@repo/env": "workspace:*",
+    "ethers": "^6.13.5",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.33.0",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.5.4"
+  }
+}
