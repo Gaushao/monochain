@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "breth": "turbo dev:breth",
+    "hf": "turbo dev:hf",
     "doc": "turbo dev:docs",
     "build": "turbo build",
     "clean": "turbo clean",

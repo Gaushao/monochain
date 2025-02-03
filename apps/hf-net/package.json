@@ -1,0 +1,24 @@
+{
+  "name": "hf-net",
+  "version": "1.0.0",
+  "description": "hyperledger fabric network",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "netup": "bash src/network.sh up",
+    "netca": "bash src/network.sh up -ca",
+    "netch": "bash src/network.sh createChannel",
+    "netdn": "bash src/network.sh down",
+    "clean": "bash src/scripts/clean.sh",
+    "test:asset-transfer": "bash src/scripts/testAssetTransfer.sh",
+    "install:hf-net": "bash src/scripts/install.sh",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {}
+}

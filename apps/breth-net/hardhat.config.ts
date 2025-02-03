@@ -5,9 +5,7 @@ import { task } from "hardhat/config"
 import { ethers } from "ethers"
 import dotenv from 'dotenv'
 
-dotenv.config({
-  path: '../../.env'
-})
+dotenv.config()
 
 task("accounts", "Prints the list of accounts", async (args, hre): Promise<void> => {
   const accounts = await hre.ethers.getSigners()

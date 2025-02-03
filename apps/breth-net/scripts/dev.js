@@ -1,18 +1,11 @@
 const fs = require("fs")
 const path = require("path")
-// require("dotenv").config({ path: path.resolve(__dirname, "../../.env") }); // Load the root .env
 
 const apps = [
-  { name: "breth-web", prefix: "NEXT_" }, // Next.js app
-  // { name: "breth-net", prefix: "BRETH_" }, // Breth app
-  // { name: "mobile", prefix: "EXPO_" }, // Mobile app
+  { name: "breth-web", prefix: "NEXT_" }, // web app
+  // { name: "breth-mobile", prefix: "EXPO_" }, // mobile app
+  // { name: "breth-any", prefix: "BRETH_" }, // any app
 ]
-
-// Resolve the monorepo root
-const rootPath = path.resolve(__dirname, "../../../")
-console.log("🚀 ~ rootPath:", rootPath)
-const rootEnvPath = path.join(rootPath, ".env")
-console.log("🚀 ~ rootEnvPath:", rootEnvPath)
 
 const loadEnvFile = (filePath) => {
   if (!fs.existsSync(filePath)) return {}
@@ -27,15 +20,13 @@ const loadEnvFile = (filePath) => {
     }, {})
 }
 
-const rootEnv = loadEnvFile(rootEnvPath)
-console.log("🚀 ~ rootEnv:", rootEnv)
+const appPath = path.resolve(__dirname, '..')
+const rootEnv = loadEnvFile(path.join(appPath, '.env'))
 
 const generateEnvFiles = () => {
   apps.forEach((app) => {
-    const envPath = path.join(rootPath, "apps", app.name, ".env")
-    console.log("🚀 ~ apps.forEach ~ envPath:", envPath)
+    const envPath = path.join(path.resolve(appPath, '..'), app.name, '.env')
     const appDir = path.dirname(envPath)
-    console.log("🚀 ~ apps.forEach ~ appDir:", appDir)
 
     // Ensure the app directory exists
     if (!fs.existsSync(appDir)) {
@@ -52,7 +43,6 @@ const generateEnvFiles = () => {
         newEnv[`${app.prefix}${key}`] = rootEnv[key]
       }
     })
-    console.log("🚀 ~ apps.forEach ~ newEnv:", newEnv)
 
     // Build the updated .env content
     const updatedEnvContent = Object.entries(newEnv)
@@ -63,9 +53,7 @@ const generateEnvFiles = () => {
     if (!fs.existsSync(envPath) || fs.readFileSync(envPath, "utf-8") !== updatedEnvContent) {
       fs.writeFileSync(envPath, updatedEnvContent, { encoding: "utf-8" })
       console.log(`${fs.existsSync(envPath) ? "Updated" : "Created"} ${envPath}`)
-    } else {
-      console.log(`No changes for ${envPath}`)
-    }
+    } else console.log(`No changes for ${envPath}`)
   })
 }
 

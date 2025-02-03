@@ -1,10 +1,10 @@
 {
   "name": "breth-web",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev:breth": "dotenvx run -f../../.env -- next dev --turbopack",
+    "dev:breth": "dotenvx run -- next dev --turbopack",
     "build:breth": "next build",
     "start:breth": "next start",
     "clean": "bash ../../packages/scripts/nextclean.sh",

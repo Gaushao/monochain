@@ -5,5 +5,5 @@ breth portal
 ## dev
 
 ```bash
-pnpm dev
+pnpm dev:breth
 ```

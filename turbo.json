@@ -32,6 +32,14 @@
       "cache": false,
       "persistent": true
     },
+    "hf-net#netch": {
+      "cache": false
+    },
+    "dev:hf": {
+      "dependsOn": ["hf-net#netch"],
+      "cache": false,
+      "persistent": true
+    },
     "clean": {
       "cache": false
     },

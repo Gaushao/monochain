@@ -1,4 +1,4 @@
-# breth
+# breth-net
 
 brazilian ethereum network blockchain
 
@@ -7,37 +7,37 @@ brazilian ethereum network blockchain
 ### dev
 
 ```sh
-pnpm dev
+pnpm dev:breth
 ```
 
 ### drop and restart
 
 ```sh
-pnpm restart
+pnpm rerun:breth
 ```
 
 ### gen docs
 
 ```sh
-pnpm doc
+pnpm dev:docs
 ```
 
 ### deploy contracts
 
 ```sh
-pnpm run deploy
-```
-
-### update rpc at .env
-
-```sh
-pnpm rpc
+pnpm run deploy:breth
 ```
 
 ### check balances
 
 ```sh
 pnpm balances
+```
+
+### update rpc at .env
+
+```sh
+pnpm env:breth
 ```
 
 ### clean
