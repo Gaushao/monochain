@@ -71,4 +71,4 @@ pnpm clean
 
 ## read more
 
-- [samples](src/samples/readme.md)
+- [samples](../docs/public/md/hf_basics.md)

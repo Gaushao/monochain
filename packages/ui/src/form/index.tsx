@@ -16,7 +16,20 @@ export function Form<F extends { [k: string]: string }>({ children, submit, ...p
   </form>
 }
 
-const SubmitButton = (
+type Props2<F> = PropsWithChildren<{
+  submit: (form: FormData) => void
+}> & FormHTMLAttributes<HTMLFormElement>
+
+export function Form2<F extends { [k: string]: string }>({ children, submit, ...props }: Props2<F>) {
+  return <form onSubmit={e => {
+    e.preventDefault()
+    submit(new FormData(e.currentTarget))
+  }} {...props}>
+    {children}
+  </form>
+}
+
+export const SubmitButton = (
   props: ButtonHTMLAttributes<HTMLButtonElement>
 ) => <button type="submit" {...props} />
 
