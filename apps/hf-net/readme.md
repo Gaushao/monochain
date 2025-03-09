@@ -4,6 +4,8 @@ hyperledger fabric network
 
 ## prerequisites
 
+`node` or `go` to chaincode package
+
 ```sh
 # git
 sudo apt-get install git
@@ -47,10 +49,16 @@ pnpm netup
 
 ### test
 
-run asset-transfer chaincode deployment
+run asset-transfer chaincode (nodejs)
 
 ```sh
 pnpm test:asset-transfer
+```
+
+run abac chaincode (golang)
+
+```sh
+pnpm test:abac-ownership
 ```
 
 ### down
