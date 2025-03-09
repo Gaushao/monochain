@@ -8,6 +8,10 @@ hf portal
 pnpm dev:hf
 ```
 
+## env
+
+on demand for setting environment copy `default.env` to `.env`
+
 # read more
 
 - [Fabric Gateway](https://hyperledger.github.io/fabric-gateway/)

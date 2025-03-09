@@ -8,9 +8,11 @@
     "netup": "bash src/network.sh up",
     "netca": "bash src/network.sh up -ca",
     "netch": "bash src/network.sh createChannel",
+    "netchca": "bash src/network.sh createChannel -ca",
     "netdn": "bash src/network.sh down",
     "clean": "bash src/scripts/clean.sh",
     "test:asset-transfer": "bash src/scripts/testAssetTransfer.sh",
+    "test:abac-ownership": "bash src/scripts/testAbacOwnership.sh",
     "install:hf-net": "bash src/scripts/install.sh",
     "lint": "eslint src"
   },
