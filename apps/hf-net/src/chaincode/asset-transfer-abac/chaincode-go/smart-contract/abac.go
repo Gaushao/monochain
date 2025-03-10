@@ -77,7 +77,7 @@ func (s *SmartContract) UpdateAsset(ctx contractapi.TransactionContextInterface,
 	}
 
 	if clientID != asset.Owner {
-		return fmt.Errorf("submitting client not authorized to update asset, does not own asset")
+		return fmt.Errorf("not authorized to update asset " + id + ", asset owner " + asset.Owner + " does not match caller " + clientID)
 	}
 
 	asset.Color = newColor

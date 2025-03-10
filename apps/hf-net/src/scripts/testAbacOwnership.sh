@@ -46,16 +46,13 @@ sleep 3
 peer chaincode query -C mychannel -n abac -c '{"function":"ReadAsset","Args":["Asset1"]}'
 
 # transfer Asset1 to the user1 identity from Org1
-export RECIPIENT="x509::CN=user1,OU=client,O=Hyperledger,ST=North Carolina,C=US::CN=ca.org1.example.com,O=org1.example.com,L=Durham,ST=North Carolina,C=US"
+export RECIPIENT="x509::CN=user1,OU=client,O=Hyperledger,ST=North Carolina,C=US::CN=fabric-ca-server,OU=Fabric,O=Hyperledger,ST=North Carolina,C=US"
 peer chaincode invoke "${TARGET_TLS_OPTIONS[@]}" -C mychannel -n abac -c '{"function":"TransferAsset","Args":["Asset1","'"$RECIPIENT"'"]}'
 
 sleep 3
 
 # verify asset owner
 peer chaincode query -C mychannel -n abac -c '{"function":"ReadAsset","Args":["Asset1"]}'
-
-# verify asset owner
-peer chaincode invoke "${TARGET_TLS_OPTIONS[@]}" -C mychannel -n abac -c '{"function":"UpdateAsset","Args":["Asset1","green","20","100"]}'
 
 # operate as the asset owner by setting the MSP path to User1
 export CORE_PEER_MSPCONFIGPATH=${PWD}/src/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp

@@ -5,12 +5,18 @@ hf portal
 ## dev
 
 ```bash
-pnpm dev:hf
+pnpm dev:org1
+# and/or
+pnpm dev:org2
 ```
 
 ## env
 
-on demand for setting environment copy `default.env` to `.env`
+`gateway/env` directory host the environment settings to organization peers, any of those may be setup on demand and can be copy to hf-net/.env file for running as default
+
+```bash
+pnpm dev:hf
+```
 
 # read more
 

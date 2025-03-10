@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "dev:hf": "dotenvx run -- next dev --turbopack",
+    "dev:org1": "dotenvx run -f gateway/env/org1.env -- next dev --turbopack",
+    "dev:org2": "dotenvx run -f gateway/env/org2.env -- next dev --turbopack",
     "build:hf": "next build",
     "start:hf": "next start",
     "clean": "bash ../../packages/scripts/nextclean.sh",
