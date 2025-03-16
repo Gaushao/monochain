@@ -10,7 +10,7 @@ type Asset = {
 export default function CreateAssetForm() {
   return <Form<Asset> submit={f => fetch('assets/create', {
     method: 'POST', body: JSON.stringify(f)
-  })}>
+  }).then(() => window.location.reload())}>
     <TextInput name='id' />
     <TextInput name='color' />
     <NumberInput name='size' />

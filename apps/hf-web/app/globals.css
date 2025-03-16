@@ -30,6 +30,9 @@ body {
     height: var(--page-offset-y);
     background: var(--background-color);
     border: 1px solid var(--border-color);
+    > a {
+      margin: 0 8px;
+    }
   }
   > nav {
     height: var(--page-offset-y);

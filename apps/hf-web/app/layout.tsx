@@ -27,6 +27,7 @@ export default function RootLayout({
     <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <header>
         <Link href='/assets'>assets</Link>
+        <Link href='/users'>users</Link>
       </header>
       <Breadcrumb />
       <main>

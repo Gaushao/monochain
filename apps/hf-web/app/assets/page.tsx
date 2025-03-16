@@ -6,6 +6,6 @@ export default async function AssetsPage() {
     <h1>assets</h1>
     <CreateAssetForm />
     <br />
-    {(await mychannelBasicApi.getAssets()).map(asset => JSON.stringify(asset))}
+    {(await mychannelBasicApi.getAssets()).map(asset => <div key={asset.ID}>{JSON.stringify(asset)}</div>)}
   </>
 }
