@@ -1,7 +1,9 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import type { Metadata } from "next"
 import localFont from "next/font/local"
-import Breadcrumb from "../cmp/Breadcrumb"
 import Link from "next/link"
+import Breadcrumb from "../cmp/Breadcrumb"
+import OrganizationSelect from "./[org]/select"
 import "./globals.css"
 
 const geistSans = localFont({
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   description: "hyperledger fabric gateway web app",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -26,8 +28,7 @@ export default function RootLayout({
   return <html lang="en">
     <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <header>
-        <Link href='/assets'>assets</Link>
-        <Link href='/identities'>identities</Link>
+        <OrganizationSelect options={await (await fetch(process.env.__NEXT_PRIVATE_ORIGIN + '/organizations')).json()} />
       </header>
       <Breadcrumb />
       <main>

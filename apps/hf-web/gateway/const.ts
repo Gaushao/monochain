@@ -1,9 +1,6 @@
 
 import * as path from 'path'
-
-function envOrDefault(key: string, defaultValue = ''): string {
-  return process.env[key] || defaultValue
-}
+import { envOrDefault } from './env/utils'
 
 export const mspId = envOrDefault('MSP_ID', 'Org1MSP')
 export const cryptoPath = envOrDefault('CRYPTO_PATH', path.resolve('..', 'hf-net/src/organizations/peerOrganizations/org1.example.com'))

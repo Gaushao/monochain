@@ -1,11 +1,11 @@
-import { CertAuthCLI } from "../../gateway"
+import { GatewayCA } from "../../../gateway"
+import { OrganizationPageProps } from "../types"
 import EnrollIdentityForm from "./enroll/form"
 import RegisterIdentityForm from "./register/form"
 import RevokeIdentityButton from "./revoke/button"
 
-const ca = new CertAuthCLI()
-
-export default async function IdentitiesPage() {
+export default async function IdentitiesPage({ params }: OrganizationPageProps) {
+  const ca = new GatewayCA((await params)?.org)
   return <div>
     <h2>Register New Identity</h2>
     <RegisterIdentityForm />

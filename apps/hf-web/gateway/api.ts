@@ -3,7 +3,7 @@ import connect, { CONNECTION_OPTIONS } from "./connect"
 
 type ContractProxy<R> = (contract: Contract) => Promise<R>
 
-export default class GatewayApi {
+export default class GatewayAPI {
   static utf8Decoder = new TextDecoder()
 
   options = {
@@ -32,7 +32,7 @@ export default class GatewayApi {
   async getAssets() {
     return this.contractProxy(async contract => {
       const resultBytes = await contract.evaluateTransaction('GetAllAssets')
-      const resultJson = GatewayApi.utf8Decoder.decode(resultBytes)
+      const resultJson = GatewayAPI.utf8Decoder.decode(resultBytes)
       const result = JSON.parse(resultJson) as {
         AppraisedValue: number,
         Color: string,
