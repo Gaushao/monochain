@@ -1,6 +1,6 @@
 import GatewayApi from './api'
 
-export { default as CertAuthSDK } from './ca/sdk'
+export { default as CertAuthCLI } from './ca/cli'
 
 // https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic
 export const mychannelBasicApi = new GatewayApi({
