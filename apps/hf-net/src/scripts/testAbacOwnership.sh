@@ -1,6 +1,6 @@
 pnpm netdn
 pnpm netchca
-src/network.sh deployCC -ccn abac -ccp chaincode/asset-transfer-abac/chaincode-go/ -ccl go
+src/network.sh deployCC -ccn abac -ccp chaincodes/go/asset-transfer-abac/ -ccl go
 
 # environment variables
 export PATH=${PWD}/bin:${PWD}:$PATH

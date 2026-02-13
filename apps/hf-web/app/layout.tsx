@@ -3,8 +3,10 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import Link from "next/link"
 import Breadcrumb from "../cmp/Breadcrumb"
-import OrganizationSelect from "./[org]/select"
+import organizations from "./organizations/client"
 import "./globals.css"
+import OrganizationSelect from "./organizations/select"
+import { PropsWithChildren } from "react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,14 +23,12 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+  children
+}: PropsWithChildren) {
   return <html lang="en">
     <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <header>
-        <OrganizationSelect options={await (await fetch(process.env.__NEXT_PRIVATE_ORIGIN + '/organizations')).json()} />
+        <OrganizationSelect options={await organizations()} />
       </header>
       <Breadcrumb />
       <main>

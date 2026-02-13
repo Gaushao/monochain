@@ -1,0 +1,21 @@
+{
+  "name": "@repo/gateway",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.6",
+    "@hyperledger/fabric-gateway": "^1.7.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20",
+    "typescript": "5.5.4"
+  }
+}

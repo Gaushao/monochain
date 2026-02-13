@@ -11,10 +11,13 @@ hyperledger fabric network
 sudo apt-get install git
 # cURL
 sudo apt-get install curl
-# docker
-sudo apt-get -y install docker-compose
 # jq
 sudo apt-get install jq
+```
+
+- Docker v24
+```sh
+sudo apt-get -y install docker-compose
 ```
 
 ## howto:pnpm

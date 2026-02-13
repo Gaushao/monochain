@@ -24,7 +24,7 @@ Run the following command to deploy the test network using Certificate Authoriti
 You can then use the test network script to deploy the `asset-transfer-abac` smart contract to a channel on the network:
 
 ```
-./network.sh deployCC -ccn abac -ccp ../asset-transfer-abac/chaincode-go/ -ccl go
+./network.sh deployCC -ccn abac -ccp ../go/asset-transfer-abac/ -ccl go
 ```
 
 ## Register identities with attributes

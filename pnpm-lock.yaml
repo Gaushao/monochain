@@ -188,9 +188,15 @@ importers:
       '@hyperledger/fabric-gateway':
         specifier: ^1.7.1
         version: 1.7.1
+      '@repo/api':
+        specifier: workspace:*
+        version: link:../../packages/api
       '@repo/env':
         specifier: workspace:*
         version: link:../../packages/env
+      '@repo/gateway':
+        specifier: workspace:*
+        version: link:../../packages/gateway
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -222,6 +228,25 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.0.3(@types/react@19.0.7)
+      typescript:
+        specifier: 5.5.4
+        version: 5.5.4
+
+  packages/api:
+    dependencies:
+      next:
+        specifier: ^15.1.0
+        version: 15.1.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^20
+        version: 20.17.13
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -276,6 +301,28 @@ importers:
       typescript-eslint:
         specifier: ^8.15.0
         version: 8.20.0(eslint@9.18.0)(typescript@5.5.4)
+
+  packages/gateway:
+    dependencies:
+      '@grpc/grpc-js':
+        specifier: ^1.12.6
+        version: 1.12.6
+      '@hyperledger/fabric-gateway':
+        specifier: ^1.7.1
+        version: 1.7.1
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^20
+        version: 20.17.13
+      typescript:
+        specifier: 5.5.4
+        version: 5.5.4
 
   packages/scripts:
     devDependencies:

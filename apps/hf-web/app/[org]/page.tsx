@@ -1,9 +1,14 @@
-import IdentitiesLink from "./identities/link"
+import { ChaincodesLink, IdentitiesLink } from "./links"
 
-export default function OrganizationPage() {
+export default async function OrganizationPage() {
   return <>
+    <br />
+    OrganizationPage
+    <br />
+    <br />
     <IdentitiesLink />
     <br />
+    <ChaincodesLink />
     <br />
   </>
 }

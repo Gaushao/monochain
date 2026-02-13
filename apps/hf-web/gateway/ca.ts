@@ -13,7 +13,7 @@ export default class GatewayCA {
   private get config() {
     const tls = path.join(FABRIC_CA_PATH, this.organization, 'tls-cert.pem')
     return {
-      bin: FABRIC_BIN_PATH,
+      bin: `${FABRIC_BIN_PATH}:$PATH`,
       path: FABRIC_CFG_PATH,
       home: path.join(ORGANIZATIONS_PATH, 'peerOrganizations', `${this.organization}.example.com`),
       caname: `ca-${this.organization}`,
@@ -27,7 +27,7 @@ export default class GatewayCA {
         const process = spawn('fabric-ca-client', args.filter(s => s.length).concat(this.config.certargs), {
           env: {
             NODE_ENV: 'development' as const,
-            PATH: `${this.config.bin}:$PATH`,
+            PATH: this.config.bin,
             FABRIC_CFG_PATH: this.config.path,
             FABRIC_CA_CLIENT_HOME: this.config.home,
           }

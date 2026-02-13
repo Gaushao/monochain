@@ -139,7 +139,7 @@ function printHelp() {
     println
     println " Examples:"
     println "   network.sh cc list -org 1"
-    println "   network.sh cc package -ccn basic -ccp chaincode/asset-transfer-basic/go -ccv 1.0.0 -ccl go"
+    println "   network.sh cc package -ccn basic -ccp chaincodes/go/asset-transfer-basic -ccv 1.0.0 -ccl go"
     println "   network.sh cc invoke -c channel1 -ccic '{\"Args\":[\"CreateAsset\",\"asset1\",\"red\",\"10\",\"fred\",\"500\"]}'"
     println "   network.sh cc query -c channel1 -ccqc '{\"Args\":[\"ReadAsset\",\"asset1\"]}'"
     println

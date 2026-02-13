@@ -9,6 +9,7 @@
     "dev:org2": "dotenvx run -f gateway/env/org2.env -- next dev --turbopack",
     "build:hf": "next build",
     "start:hf": "next start",
+    "cc-deploy": "bash ../hf-net/src/scripts/cc/deploy.sh",
     "clean": "bash ../../packages/scripts/nextclean.sh",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit"
@@ -18,6 +19,8 @@
     "@hyperledger/fabric-gateway": "^1.7.1",
     "@repo/env": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@repo/gateway": "workspace:*",
+    "@repo/api": "workspace:*",
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
